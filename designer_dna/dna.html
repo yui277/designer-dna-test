@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>设计师人格基因测试 | Designer DNA Test</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="bg-canvas"></canvas>
+    
+    <!-- 独立于主面板的更多工具按钮，放置在右上角 -->
+    <a href="https://www.lichengfu2003.top/tools/port.html" class="corner-tools-link">更多工具 ↗</a>
+
+    <div class="app-container">
+        <section id="welcome-page" class="page active">
+            <div class="hero-card swiss-grid">
+                <div class="hero-left">
+                    <div class="hero-badge">DESIGNER DNA TEST v1.0</div>
+                    <h1 class="swiss-title">设计师<br>人格 基因测试</h1>
+                    <p class="hero-subtitle">Discover Your Designer DNA</p>
+                </div>
+                <div class="hero-right">
+                    <div class="hero-logo">
+                        <svg viewBox="0 0 80 80" class="dna-logo abstract-logo">
+                            <rect x="10" y="10" width="60" height="60" fill="none" stroke="var(--primary)" stroke-width="2"/>
+                            <rect x="25" y="25" width="30" height="30" fill="var(--primary)"/>
+                            <circle cx="60" cy="60" r="8" fill="var(--accent)"/>
+                        </svg>
+                    </div>
+                    <p class="hero-desc">110位古今中外设计大咖 · 32道哲学思辨题 · 3道深度开放题<br>从建筑到平面，从产品到景观，探索你的设计灵魂与哪位大师共振</p>
+                    <div class="hero-meta swiss-meta">
+                        <span class="meta-item">32 选择题</span>
+                        <span class="meta-item">3 开放题</span>
+                        <span class="meta-item">EST. 10 MIN</span>
+                    </div>
+                    <button id="start-btn" class="primary-btn huge-btn">开始测试</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="test-page" class="page">
+            <div class="test-card">
+                <div class="test-header">
+                    <div class="progress-wrap">
+                        <div class="progress-track"><div id="progress-fill" class="progress-fill"></div></div>
+                        <div class="progress-info"><span id="current-q">1</span><span class="progress-sep">/</span><span id="total-q">35</span></div>
+                    </div>
+                    <span id="q-type-badge" class="type-badge">选择题</span>
+                </div>
+                <div class="question-area">
+                    <div id="question-content" class="question-text"></div>
+                    <div id="choices-container" class="choices-list"></div>
+                    <div id="open-input-container" class="open-input" style="display:none;">
+                        <textarea id="open-answer" placeholder="请输入你的真实想法..."></textarea>
+                        <div class="input-hint">答案无对错，真实表达即可</div>
+                    </div>
+                </div>
+                <div class="test-nav">
+                    <button id="prev-btn" class="sec-btn">← 上一题</button>
+                    <button id="next-btn" class="primary-btn">下一题 →</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="loading-page" class="page">
+            <div class="loading-card">
+                <div class="loading-spinner"><div class="spinner-ring"></div><div class="spinner-ring delay-1"></div><div class="spinner-ring delay-2"></div></div>
+                <h2>正在解析你的设计基因</h2>
+                <p id="loading-status" class="loading-text">匹配设计师大脑中...</p>
+            </div>
+        </section>
+
+        <section id="result-page" class="page">
+            <div id="result-card" class="result-card"></div>
+            <div class="result-actions">
+                <button id="retake-btn" class="sec-btn">
+                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M1 4v6h6"/>
+                        <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/>
+                    </svg>
+                    重新测试
+                </button>
+                <button id="share-btn" class="primary-btn">
+                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                        <polyline points="7 10 12 15 17 10"/>
+                        <line x1="12" y1="15" x2="12" y2="3"/>
+                    </svg>
+                    保存图片
+                </button>
+            </div>
+        </section>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-strip"><iframe src="https://www.lichengfu2003.top/tools/CellChord_Footer_small.html" title="Footer" scrolling="no" frameborder="0"></iframe></div>
+        <div class="icp">粤ICP备2026036102号-1</div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+    <script src="webbase.js"></script>
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

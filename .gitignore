@@ -1,0 +1,17 @@
+# 敏感配置
+designer_dna/api/secrets.local.php
+
+# IDE 和工具
+.qoder/
+*.code-workspace
+.vscode/
+.idea/
+
+# 非项目文件
+port2.html
+port3.html
+
+# 系统文件
+Thumbs.db
+.DS_Store
+desktop.ini
